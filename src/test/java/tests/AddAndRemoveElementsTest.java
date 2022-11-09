@@ -22,7 +22,7 @@ public class AddAndRemoveElementsTest {
     private static final By ADD_AND_REMOVE_ELEMENTS = By.xpath("//a[@href='/add_remove_elements/']");
     private static final By ADD_ELEMENT = By.xpath("//button[text()='Add Element']");
     private static final By DELETE_ELEMENT = By.xpath("//button[text()='Delete']");
-    private int ONE_ELEMENT = 1;
+    private int oneElement = 1;
     private WebDriver driver;
 
     @BeforeClass
@@ -36,21 +36,13 @@ public class AddAndRemoveElementsTest {
     }
 
     @Test
-    public void addTwoElementsTest() {
+    public void verifyAddAndDeleteElementsTest() {
         driver.findElement((ADD_ELEMENT)).click();
         driver.findElement(ADD_ELEMENT).click();
-    }
-
-    @Test
-    public void removeElementTest() {
         driver.findElements(DELETE_ELEMENT);
-    }
-
-    @Test
-    public void verifyCountOfElementsTest() {
         ArrayList<WebElement> actualElementsList = new ArrayList<>(driver.findElements(ADD_ELEMENT));
         int actualElementsCount = actualElementsList.size();
-        Assert.assertEquals(actualElementsCount, ONE_ELEMENT);
+        Assert.assertEquals(actualElementsCount, oneElement);
     }
 
     @AfterClass
