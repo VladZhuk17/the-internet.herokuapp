@@ -45,13 +45,9 @@ public class Checkboxes {
         Assert.assertEquals(actualCheckboxOne, expectedCheckboxOne);
     }
 
-    @Test(priority = 2)
-    public void clickTheFirstTest() {
-        driver.findElement(CHECKBOX_ONE).click();
-    }
-
     @Test(priority = 3)
     public void verifyTheFirstCheckboxIsCheckedTest() {
+        driver.findElement(CHECKBOX_ONE).click();
         actualCheckboxOne = driver.findElement(CHECKBOX_ONE).isSelected();
         expectedCheckboxOne = true;
         Assert.assertEquals(actualCheckboxOne, expectedCheckboxOne);
@@ -65,13 +61,9 @@ public class Checkboxes {
         Assert.assertEquals(actualCheckboxOne, expectedCheckboxOne);
     }
 
-    @Test(priority = 5)
-    public void clickTheSecondTest() {
-        driver.findElement(CHECKBOX_TWO).click();
-    }
-
     @Test(priority = 6)
     public void verifyTheSecondCheckboxIsUncheckedTest() {
+        driver.findElement(CHECKBOX_TWO).click();
         actualCheckboxTwo = driver.findElement(CHECKBOX_ONE).isSelected();
         expectedCheckboxTwo = false;
         Assert.assertEquals(actualCheckboxOne, expectedCheckboxOne);
